@@ -90,7 +90,7 @@ function defineReactive(data, key, val) {
         get: function () {
             dep.depend();
             if (childOb) {
-                childOb.dep.depend(); //数组getter收集依赖
+                childOb.dep.depend(); //数组getter收集依赖, 不止服务于对象, 也服务于对象的Vue.$set/$delete方法
             }
         },
         set: function (newVal) {

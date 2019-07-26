@@ -47,15 +47,6 @@ export default class Watcher {
         window.target = this;
         let value = this.getter.call(vm, vm);
         if (this.deep) {  //必须在window.target销毁之前递归，原因见函数内部
-
-
-
-
-
-
-
-
-            
             traverse(this.value);
         }
         window.target = undefined;
