@@ -16,6 +16,7 @@ function Vue(options) {
 //五个方法都是向Vue原型挂载方法
 initMixin(Vue);  //_init方法
 stateMixin(Vue);  //数据相关的实例方法, vm.$watch, vm.$set, $delete, 之前实现过了
-renderMixin(Vue);
+renderMixin(Vue);  //vm.$nextTick
 eventsMixin(Vue);  //事件相关的实例方法
-lifecycleMixin(Vue);
+lifecycleMixin(Vue);  //vm.$forceUpdate, vm.$destroy
+//vm.$mount是跨平台代码挂载到Vue原型上的

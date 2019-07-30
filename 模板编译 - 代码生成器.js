@@ -14,7 +14,7 @@ function genElement(el, state) {
     const data = el.plain ? undefined : genData(el, state);  //el.plain是编译时产生的, 为true说明el没有属性
     //获取元素节点中的children子节点数组
     const children = genChildren(el, state);
-    code = `_c(${el.tag}, ${data ? data : ''}, ${children ? children : ''})`;
+    code = `_c("${el.tag}", ${data ? data : ''}, ${children ? children : ''})`;
     return code;
 }
 function genChildren(el, state) {
