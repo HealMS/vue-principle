@@ -53,7 +53,7 @@ function parseStartTag() {
  */
 const startTagMatch = parseStartTag();
 if (startTagMatch) {
-    handleStartTag(startTagMatch);  //将tagName, attrs, unary等数据去除并调用start钩子将数据放进参数中
+    handleStartTag(startTagMatch);  //将tagName, attrs, unary等数据取出并调用start钩子将数据放进参数中, 其中会执行options.start钩子
     continue;  //触发完钩子函数建立部分AST之后，都要继续执行循环，所以存在continue
 }
 /**

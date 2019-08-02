@@ -15,7 +15,7 @@ export function set(target, key, val) {
     //处理数组的情况
     if (Array.isArray(target) && isValidArrayIndex(key)) {
         target.length = Math.max(target.length, key);
-        target.splice(key, 1);  //通过变异的splice()方法代替target[key] = val实现响应式;
+        target.splice(key, 0, val);  //通过变异的splice()方法代替target[key] = val实现响应式;
         return val;
     }
     //对象key in target
